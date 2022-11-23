@@ -1,7 +1,7 @@
 import java.util.Iterator;
 import java.util.Scanner;
 
-public class lab1 {
+public class Lab1 {
 
     public static void main(String[] args) {
 
@@ -9,7 +9,7 @@ public class lab1 {
         // xor(true, false);
         // isFactor(3, 43);
 
-        // Scanner scr = new Scanner(System.in);
+        Scanner scr = new Scanner(System.in);
         //
         // System.out.println("Hi mom, enter in a random number to see if it is prime:
         // ");
@@ -17,9 +17,29 @@ public class lab1 {
         // int userInput = scr.nextInt();
         //
         //
-        // isPrime(userInput);
+        // isFactor(userInput);
 
-        findDupesHarder("atyuiohjkla,./");
+        // findDupesHarder("atyuiohjkla,./");
+
+
+
+        int dayOfWeek = scanner.nextInt();
+
+
+        if(dayOfWeek == 1) {
+            System.out.println("SUNDAY");
+        }
+        switch(dayOfWeek) {
+            case 1:
+            System.out.println("SUNDAY");
+            break;
+            case 2:
+            System.out.println("monday");
+            break;
+            default:
+            System.out.println("GO AWAY BILLY");
+        }
+        
 
     }
 
