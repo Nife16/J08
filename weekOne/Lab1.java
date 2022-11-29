@@ -1,4 +1,4 @@
-import java.util.Iterator;
+
 import java.util.Scanner;
 
 public class Lab1 {
@@ -23,7 +23,7 @@ public class Lab1 {
 
 
 
-        int dayOfWeek = scanner.nextInt();
+        int dayOfWeek = scr.nextInt();
 
 
         if(dayOfWeek == 1) {
@@ -40,6 +40,8 @@ public class Lab1 {
             System.out.println("GO AWAY BILLY");
         }
         
+
+        scr.close();
 
     }
 

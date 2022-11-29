@@ -26,6 +26,7 @@ public class LabTwo {
 
         System.out.println("Area: " + area + ", Circumferencee: " +  circumference);
         
+        scanner.close();
     }
 
     public static void triangle() {
@@ -42,6 +43,8 @@ public class LabTwo {
         int area = (base*height)/2;
 
         System.out.println("Area -> " + area);
+
+        scanner.close();
     }
 
     public static void evenOrOdd() {
@@ -58,6 +61,8 @@ public class LabTwo {
         } else {
             System.out.println("ODD");
         }
+
+        scanner.close();
     }
 
     public static void oneDecimal() {
@@ -73,6 +78,8 @@ public class LabTwo {
         double oneDecimalNumber = Math.round(number*10)/10;
 
         System.out.println("Wan Decimuh: " +  oneDecimalNumber);
+
+        scanner.close();
     }
 
     public static void letterAsASCII() {
@@ -88,6 +95,8 @@ public class LabTwo {
 
         int ascii = (int) letter;
         System.out.println(ascii);
+
+        scanner.close();
     }
 
     public static void doubleAsWhole() {
@@ -104,6 +113,8 @@ public class LabTwo {
         int wholeNumbuh = (int) Math.round(dubuhl);
 
         System.out.println("Whole number is -> " + wholeNumbuh);
+
+        scanner.close();
         
     }
 }

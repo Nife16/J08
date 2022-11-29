@@ -1,18 +1,29 @@
+import java.util.ArrayList;
+import java.util.List;
+
 public class Product {
-    
-    private Double price;
+
+    private Double price = .99;
     private String name;
     private String description;
+    private List<Integer> numList = new ArrayList<Integer>();
+    
+    public Product(Double price, String name, String description) {
+        this.price = price;
+        this.name = name;
+        this.description = description;
+    }
 
     public Product() {
         super();
     }
 
-    public Product(Double price, String name, String description) {
-        super();
-        this.price = price;
-        this.name = name;
-        this.description = description;
+    public List<Integer> getNumList() {
+        return numList;
+    }
+
+    public void setNumList(List<Integer> numList) {
+        this.numList = numList;
     }
 
     public Double getPrice() {
@@ -45,5 +56,5 @@ public class Product {
     }
 
     
-
+    
 }
