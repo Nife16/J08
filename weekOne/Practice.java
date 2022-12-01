@@ -1,20 +1,30 @@
+import java.util.LinkedList;
 import java.util.Scanner;
+import java.util.Stack;
 
 public class Practice {
 
     public static void main(String[] args) {
 
-        //  Write a Java program to find a missing number in an array. 
-        //assume its sorted in ascending order
-        
-        Scanner scanner = new Scanner(System.in);
+        // Stack<Integer> stack = new Stack<Integer>();
 
-        int[] randomArr = new int[50];
-        for (int i = 0; i < args.length; i++) {
-            randomArr[i] = (int)(Math.random()*randomArr.length);
-        }
+
+        // //  Write a Java program to find a missing number in an array. 
+        // //assume its sorted in ascending order
         
-        findMissingNum(new int[]{1,4,5,6,7,8});
+        // Scanner scanner = new Scanner(System.in);
+
+        // int[] randomArr = new int[50];
+        // for (int i = 0; i < args.length; i++) {
+        //     randomArr[i] = (int)(Math.random()*randomArr.length);
+        // }
+
+        
+        // findMissingNum(new int[]{1,4,5,6,7,8});
+
+        int myArray [] = {1, 3, 5};
+
+        System.out.println(myArray);
 
     }
 
