@@ -1,3 +1,4 @@
+package classStuff;
 import java.util.Scanner;
 
 public class LabThree {
