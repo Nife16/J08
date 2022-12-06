@@ -1,0 +1,157 @@
+/* Make your html tag and body tag take up the whole page view
+View height and View width will scale to whatever your browser screens size is */
+html body {
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
+    font-family: Roboto,arial,sans-serif;
+}
+
+/* All tags (*) but not the head will display flex
+I want everything to display flex so i can flex row flex col to my hearts content! */
+*:not(head) {
+    display: flex;
+}
+
+.flex-col {
+    flex-direction: column;
+}
+
+.flex-row {
+    flex-direction: row;
+}
+
+.header {
+    height: 60px;
+    align-items: center;
+    padding: 6px;
+}
+
+.full-width {
+    width: 100%;
+}
+
+.half-width {
+    width: 50%;
+}
+
+.third-width {
+    width: 33%;
+}
+
+.center {
+    justify-content: center;
+}
+
+.right {
+    justify-content: right;
+}
+
+.margin-left-header-link {
+    margin-left: 15px !important;
+}
+
+.header-link {
+    padding: 5px;
+    margin: 0 5px;
+    color: #202124;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.circle-button {
+    height: 32px;
+    width: 32px;
+    background-color: burlywood;
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-weight: 500;
+}
+
+.align-center {
+    align-items: center;
+}
+
+.header-padding-right {
+    padding-right: 10px;
+}
+
+.main-content {
+    min-height: 150px;
+    max-height: 290px;
+    margin-top: 60px;
+    margin-bottom: auto;
+}
+
+.search-bar {
+    border: 1px solid #dfe1e5;
+    border-radius: 30px;
+    height: 44px;
+    width: 100%;
+    max-width: 584px;
+}
+
+.search-bar:hover {
+    color: #dfe1e5;
+    box-shadow: 1px 1px 1px 1px;
+}
+
+.google-img {
+    max-height: 200px;
+    max-width: 500px;
+}
+
+.icon {
+    padding: 15px;
+    height: 20px;
+    width: 20px;
+}
+
+.search-input {
+    border: none;
+    outline: none;
+    height: 20px;
+    width: 75%;
+}
+.search-input:focus {
+    border: none;
+    outline: none;
+    height: 20px;
+    width: 75%;
+}
+
+.eighty-width {
+    width: 80%;
+}
+
+.search-button {
+    background-color: #f8f9fa;
+    border: 1px solid #f8f9fa;
+    border-radius: 4px;
+    color: #3c4043;
+    font-family: Roboto,arial,sans-serif;
+    font-size: 14px;
+    margin: 11px 4px;
+    padding: 0 16px;
+    line-height: 27px;
+    height: 36px;
+    min-width: 54px;
+    text-align: center;
+    cursor: pointer;
+    user-select: none;
+}
+
+.search-buttons:hover {
+    color: #3c4043;
+    box-shadow: 1px 1px 1px 1px;
+}
+
+.footer { 
+    height: 40px;
+    align-items: center;
+    padding: 6px;
+    color: #70757a;
+    background-color: #f2f2f2;
+}
