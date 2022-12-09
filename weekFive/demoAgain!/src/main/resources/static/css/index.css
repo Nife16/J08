@@ -1,0 +1,60 @@
+/* 100 View Height and Width to cover the page
+margin 0 to get rid of ugly gaps around page*/
+html body {
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
+}
+
+/* Make every html element display flex, so we can flex row and col all we want :) */
+*:not(head) {
+    display:flex;
+}
+
+/* makes children of an element display in a row direction, so side to side */
+.flex-row {
+    flex-direction: row;
+}
+/* makes children of an element display in a columnn direction, so up and down */
+.flex-col {
+    flex-direction: column;
+}
+
+.header {
+    width: 100%;
+    height: 8%;
+    background-color: rgb(85, 16, 85);
+}
+
+.header-links {
+    color: white;
+    margin: 20px;
+    align-items: center;
+    justify-content: center;
+}
+
+.justify-center {
+    justify-content: center;
+    align-items: center;
+}
+
+.justify-right {
+    justify-content: right;
+}
+
+.fake-input-box {
+    border-radius: 10px;
+    height: 50%;
+    width: 100%;
+}
+
+.third-width {
+    width: 33%;
+}
+
+.main {
+    height: 92%;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
