@@ -17,7 +17,7 @@
 			<a class="header-links" href="/signIn">Sign In</a>
 		</div>
 	</div>
-	<div class="main">
+	<div class="main flex-col">
 		<h1>When we have content, it goes here</1>
 		<p>and it will be pretty!</p>
 	</div>
