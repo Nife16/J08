@@ -2,6 +2,7 @@ package com.example.controller;
 
 import javax.servlet.http.HttpSession;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -23,7 +24,8 @@ import com.example.service.UserService;
 public class UserController {
     
 
-    UserService userService = new UserService();
+    @Autowired
+    UserService userService;
 
     /*
      * Mappings let you return a specific JSP file to view on your browser

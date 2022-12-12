@@ -11,15 +11,10 @@ import org.springframework.context.annotation.ComponentScan;
 // You need to scan for your Spring components
 // for your files to successfully be seen
 @ComponentScan(basePackages="com.example")
-public class DemoApplication extends SpringBootServletInitializer  {
+public class DemoApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(DemoApplication.class, args);
-	}
-
-	@Override
-	protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
-		return application.sources(DemoApplication.class);
 	}
 
 }

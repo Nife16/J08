@@ -3,19 +3,24 @@ package com.example.service;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
 import com.example.entity.User;
+import com.example.repo.UserRepo;
 
 /*
  * Service files are made to do logic
  * CRUD FUNCTIONALITY!!!!!
  */
+@Service
 public class UserService {
-    
-    int idCounter = 1;
-    List<User> ourSapps = new ArrayList<User>();
+
+
+    @Autowired
+    UserRepo userRepo;
 
     // function to create
-
     public User createUser(User user) {
 
         // Here we are adding validation to our form so we can control the users input to our liking
@@ -27,9 +32,9 @@ public class UserService {
         if(!isPasswordLongEnough(user.getPassword())) {
             return null;
         }
-        user.setId(idCounter);
-        ourSapps.add(user);
-        idCounter++;
+
+        userRepo.save(user);
+
         return user;
     }
 
@@ -41,11 +46,7 @@ public class UserService {
     }
 
     public boolean doesUsernameExist(String username) {
-        for(int i = 0; i < ourSapps.size(); i++) {
-            if(username.equals(ourSapps.get(i).getUsername())) {
-                return true;
-            }
-        }
+        
 
         return false;
     }
@@ -54,6 +55,7 @@ public class UserService {
 
     public void updateUser() {
 
+        
 
     }
 
@@ -61,15 +63,7 @@ public class UserService {
 
     public User getUserByEmailAndPassword(String username, String password) {
         
-        // Loop through our list of signed up users to find the correct user to sign in
-        for (int i = 0; i < ourSapps.size(); i++) {
-            
-            if(username.equals(ourSapps.get(i).getUsername()) &&
-                password.equals(ourSapps.get(i).getPassword())) {
-                    return ourSapps.get(i);
-            }
-
-        }
+        
 
         return null;
 
@@ -79,14 +73,7 @@ public class UserService {
 
     public void deleteUser(String username, String password) {
 
-        for (int i = 0; i < ourSapps.size(); i++) {
-            
-            if(username.equals(ourSapps.get(i).getUsername()) &&
-                password.equals(ourSapps.get(i).getPassword())) {
-                    ourSapps.remove(i);
-            }
-
-        }
+        
 
     }
 
