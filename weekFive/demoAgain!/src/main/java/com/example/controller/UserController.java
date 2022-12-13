@@ -106,15 +106,18 @@ public class UserController {
                                             // they are on the site
                                             // SESSION DATA CANNOT BE ACCESSED ON THE JSP,
                                             // we still the Model for putting data on each page
-    public String signIn(@ModelAttribute("user") User user, HttpSession session) {
+    public String signIn(@ModelAttribute("user") User user, HttpSession session, Model model) {
 
-        User loggedInUser = userService.getUserByEmailAndPassword(user.getUsername(), user.getPassword());
+        User loggedInUser = userService.getUserByEmailAndPassword(user);
 
         if(loggedInUser == null) {
             return "signIn";
         }
 
+        // Session is used to store data for the entire time the user is using the Website
         session.setAttribute("loggedInUser", loggedInUser);
+
+        model.addAttribute("user", loggedInUser);
 
         return "index";
 

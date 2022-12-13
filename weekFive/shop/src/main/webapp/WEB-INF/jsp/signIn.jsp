@@ -4,7 +4,7 @@
 
 	<head>
 		<meta charset="utf-8">
-		<title>Dealership App</title>
+		<title>Sallys Christmas shop App</title>
 		<link rel="stylesheet" href="/css/signUp.css">
 	</head>
 
@@ -12,13 +12,10 @@
 		<div class="out-of-the-box">
 			<div class="box">
 				<div class="box-content flex-col margin-center">
-					<h1 class="box-header">Sign Up Box</h1>
-					<p class="">Sign Up For Sallys!</p>
+					<h1 class="box-header">Sign In Box</h1>
+					<p class="">Sign In For Sallys!</p>
 					<p class="">Please</p>
-					<!-- modelAttribute: the object you set on the model in the UserController
-						 action: the page you are submitting the action
-						 method: the type of HTTP request you are making with the form, in this case a Post -->
-					<form:form modelAttribute="user" action="signUp" method="post">
+					<form:form modelAttribute="user" action="signIn" method="post">
 						<div class="flex-col">
 							<div class="flex-row">
 								<div class="box-input">

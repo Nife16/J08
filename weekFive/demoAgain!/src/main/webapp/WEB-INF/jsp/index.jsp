@@ -1,3 +1,5 @@
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <html>
 <head>
 <title>Practice</title>
@@ -20,6 +22,11 @@
 	<div class="main flex-col">
 		<h1>When we have content, it goes here</1>
 		<p>and it will be pretty!</p>
+		<c:if test="${user != null}">
+			<div>
+				${user.getUsername()}
+			</div>
+		</c:if>
 	</div>
 </body>
 </html>

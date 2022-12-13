@@ -33,9 +33,8 @@ public class UserService {
             return null;
         }
 
-        userRepo.save(user);
+        return userRepo.save(user);
 
-        return user;
     }
 
     public boolean isPasswordLongEnough(String password) {
@@ -55,15 +54,20 @@ public class UserService {
 
     public void updateUser() {
 
-        
+
 
     }
 
     // function to read
 
-    public User getUserByEmailAndPassword(String username, String password) {
+    public User getUserByEmailAndPassword(User user) {
         
         
+        User foundUser = userRepo.findByUserNameAndPassword(user.getUsername(), user.getPassword());
+        
+        if(foundUser != null) {
+            return foundUser;
+        }
 
         return null;
 
