@@ -1,0 +1,37 @@
+
+img {
+    height:100px;
+    width: 100px;
+}
+
+.list-item {
+    flex-direction: column;
+    align-items: center;
+    margin: 15px;
+}
+
+.center {
+    justify-content: center;
+    align-items: center;
+}
+
+.full-width {
+    width: 100%;
+}
+
+.buy-button {
+    background-color: #1E792C; /* Green */
+    border: none;
+    color: red;
+    padding: 10px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 15px;
+    margin: 10px;
+  }
+
+  .button-link {
+    text-decoration: none;
+  }

@@ -1,5 +1,7 @@
 package com.sallyschristmas.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -18,6 +20,14 @@ public class UserService {
     
     public Sapp findByEmailAndPassword(Sapp user) {
         return userRepo.findByEmailAndPassword(user.getUsername(), user.getPassword());
+    }
+
+    public Sapp findUserById(Integer userId) {
+        return userRepo.findById(userId).get();
+    }
+
+    public List<Sapp> findAllSapps() {
+        return userRepo.findAll();
     }
     
 }

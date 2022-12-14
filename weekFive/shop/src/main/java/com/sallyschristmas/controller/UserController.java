@@ -19,7 +19,11 @@ public class UserController {
     UserService userService;
     
     @GetMapping("/")
-    public String index() {
+    public String index(HttpSession session) {
+        
+        Sapp loggedInUser = (Sapp) session.getAttribute("loggedInUser");
+
+        System.out.println(loggedInUser.toString());
         return "home";
     }
 
@@ -53,7 +57,7 @@ public class UserController {
 
         Sapp loggedInUser = userService.findByEmailAndPassword(user);
 
-        session.setAttribute("loggedInUser", loggedInUser);
+        session.setAttribute("loggedInUserId", loggedInUser.getId());
 
         model.addAttribute("loggedInUser", loggedInUser);
 

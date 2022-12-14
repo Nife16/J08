@@ -6,6 +6,7 @@
 <head>
 	<title>Sallys Christmas Gift Shop</title>
     <link rel="stylesheet" href="/css/home.css">
+    <link rel="stylesheet" href="/css/product.css">
 </head>
 <body class="flex-col">
 	<div class="flex-row header">
@@ -23,7 +24,17 @@
         </c:choose>
     </div>
 	<div class="flex-row main-content">
-
+        <div class="flex-row center full-width">
+            <c:forEach var="product" items="${allProducts}">
+                <div class="list-item">
+                    <div>${product.getName()}</div>
+                    <div>${product.getPrice()}</div>
+                    <div>${product.getDescription()}</div>
+                    <img src="${product.getImages()}" />
+                    <button class="buy-button"><a class="button-link" href="/confirmation/${product.getId()}">Add to cart</a></button>
+                </div>
+            </c:forEach>
+        </div>
     </div>
 </body>
 

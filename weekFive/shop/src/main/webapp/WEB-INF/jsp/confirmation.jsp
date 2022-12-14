@@ -11,7 +11,7 @@
 	<div class="flex-row header">
         <a class="header-links" href="/product">Products</a>
         <c:choose>
-            <c:when test="${loggedInUser != null}">
+            <c:when test="${loggedInPerson != null}">
                 <a class="header-links" href="/">Home</a>
                 <div class="icon">${loggedInUser.getUsername().toUpperCase().charAt(0)}</div>
             </c:when>    
@@ -23,7 +23,8 @@
         </c:choose>
     </div>
 	<div class="flex-row main-content">
-
+        Are you sure?
+        
     </div>
 </body>
 
