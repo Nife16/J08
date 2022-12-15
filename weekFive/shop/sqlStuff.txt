@@ -1,0 +1,8 @@
+INSERT INTO shop.product
+VALUES (1, "best damn lemonade, christmas style", "https://www.swankyrecipes.com/wp-content/uploads/2013/12/Christmas-Lemonade.jpg", "Sallys Lemonade (Spiked)", 5.00);
+
+INSERT INTO shop.product
+VALUES (2, "best damn soda, christmas style", "https://i.pinimg.com/736x/20/7c/0b/207c0b2996cb636ec23c3232c982b964.jpg", "Sallys Holly Jolly Soda", 3.50);
+
+INSERT INTO shop.product
+VALUES (3, "best damn water, christmas style", "https://m.media-amazon.com/images/I/61fETM1Jh5L.jpg", "Sallys Better Water", 4.50);

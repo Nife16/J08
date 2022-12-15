@@ -19,11 +19,16 @@ public class UserController {
     UserService userService;
     
     @GetMapping("/")
-    public String index(HttpSession session) {
+    public String index(HttpSession session, Model model) {
         
-        Sapp loggedInUser = (Sapp) session.getAttribute("loggedInUser");
+        Integer loggedInUserId = (Integer) session.getAttribute("loggedInUserId");
 
-        System.out.println(loggedInUser.toString());
+        if(loggedInUserId != null) {
+            System.out.println(loggedInUserId);
+            Sapp loggedInUser = userService.findUserById(loggedInUserId);
+            model.addAttribute("loggedInUser", loggedInUser);
+
+        }
         return "home";
     }
 
@@ -63,6 +68,14 @@ public class UserController {
 
         return "home";
 
+    }
+
+    @PostMapping("/signOut")
+    public String signOut(HttpSession session) {
+
+        session.removeAttribute("loggedInUserId");
+
+        return "home";
     }
 
 }

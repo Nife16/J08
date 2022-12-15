@@ -13,6 +13,11 @@
         <c:choose>
             <c:when test="${loggedInUser != null}">
                 <a class="header-links" href="/">Home</a>
+                <form:form modelAttribute="loggedInUser" action="signOut" method="post">
+                    <form:button type="submit" class="header-links">
+                        Sign Out
+                    </form:button>
+                </form:form>
                 <div class="icon">${loggedInUser.getUsername().toUpperCase().charAt(0)}</div>
             </c:when>    
             <c:otherwise>
