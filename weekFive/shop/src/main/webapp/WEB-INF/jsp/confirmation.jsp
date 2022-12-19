@@ -24,7 +24,6 @@
     </div>
 	<div class="flex-row main-content">
         Are you sure?
-        
     </div>
 </body>
 

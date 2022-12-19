@@ -54,3 +54,8 @@ html, body {
     font-size: 28px;
     color: red;
 }
+
+.shop-icon {
+    height: 50px;
+    width: 50px;
+  }

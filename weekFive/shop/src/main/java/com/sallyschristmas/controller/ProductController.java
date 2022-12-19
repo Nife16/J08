@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 import com.sallyschristmas.entity.Product;
 import com.sallyschristmas.entity.Sapp;
+import com.sallyschristmas.service.CartService;
 import com.sallyschristmas.service.ProductService;
 import com.sallyschristmas.service.UserService;
 
@@ -25,6 +26,10 @@ public class ProductController {
 
     @Autowired
     UserService userService;
+    
+
+    @Autowired
+    CartService cartService;
     
 
     @GetMapping("/product")
@@ -45,17 +50,26 @@ public class ProductController {
     }
 
     @GetMapping("/confirmation/{productId}")
-    public String addToCart(@PathVariable("productId") Integer productId, HttpSession session) {
+    public String addToCart(@PathVariable("productId") Integer productId, HttpSession session, Model model) {
 
         Product product = productService.getProductById(productId);
         Integer loggedInUserId = (Integer) session.getAttribute("loggedInUserId");
         Sapp loggedInUser;
         if(loggedInUserId != null) {
             loggedInUser = userService.findUserById(loggedInUserId);
+                
+            model.addAttribute("loggedInUser", loggedInUser);
+                
+            System.out.println(cartService.addToCart(loggedInUser, product).getCart().toString());
+        } else {
+            // not logged in add to cart goes here 
         }
-        // System.out.println(product.toString());
 
-        return "confirmation";
+        List<Product> allProducts = productService.getAllProducts();
+
+        model.addAttribute("allProducts", allProducts);
+
+        return "product";
 
     }
 

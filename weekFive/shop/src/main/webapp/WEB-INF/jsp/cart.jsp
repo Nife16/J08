@@ -26,16 +26,18 @@
     </div>
 	<div class="flex-row main-content">
         <div class="flex-row center full-width">
-            <c:forEach var="product" items="${allProducts}">
+            <c:forEach var="product" items="${loggedInUser.getCart().getProducts()}">
                 <div class="list-item">
                     <div>${product.getName()}</div>
                     <div>${product.getPrice()}</div>
                     <div>${product.getDescription()}</div>
                     <img src="${product.getImages()}" />
-                    <button class="buy-button"><a class="button-link" href="/confirmation/${product.getId()}">Add to cart</a></button>
+                    <button class="buy-button"><a class="button-link" href="/removeFromCart/${product.getId()}">Remove from cart</a></button>
                 </div>
             </c:forEach>
         </div>
+        <div class="center">Total Price: ${loggedInUser.getCart().getTotalPrice()}</div>
+        <button class="buy-button"><a class="button-link" href="">Buy items</a></button>
     </div>
 </body>
 

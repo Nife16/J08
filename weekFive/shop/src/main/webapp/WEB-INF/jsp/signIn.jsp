@@ -20,7 +20,6 @@
 							<div class="flex-row">
 								<div class="box-input">
 									<form:input path="username" placeholder="Username" type="text" />
-									<c:if test="${message != null}">${message}</c:if>
 								</div>
 								<div class="arrow">&</div>
 								<div class="box-input">
@@ -28,6 +27,7 @@
 								</div>
 							</div>
 							<form:button type="submit" class="result-button">Submit</form:button>
+							<c:if test="${message != null}">${message}</c:if>
 						</div>
 					</form:form>
 				</div>

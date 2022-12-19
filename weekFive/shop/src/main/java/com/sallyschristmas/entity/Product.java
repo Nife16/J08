@@ -34,6 +34,9 @@ public class Product {
     @Column(name = "images")
 	private String images;
 
+    // @ManyToMany(mappedBy = "cart")
+    // List<Cart> carts;
+
     public Product() {}
 
     public Integer getId() {

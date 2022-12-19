@@ -8,6 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.sallyschristmas.entity.Sapp;
 import com.sallyschristmas.service.UserService;
@@ -42,7 +43,7 @@ public class UserController {
     @PostMapping("/signUp")
     public String signUp(@ModelAttribute Sapp user, Model model) {
 
-        userService.save(user);
+        userService.createAccount(user);
 
         model.addAttribute("user", new Sapp());
 
@@ -62,20 +63,25 @@ public class UserController {
 
         Sapp loggedInUser = userService.findByEmailAndPassword(user);
 
-        session.setAttribute("loggedInUserId", loggedInUser.getId());
+        if(loggedInUser != null) {
+            session.setAttribute("loggedInUserId", loggedInUser.getId());
 
-        model.addAttribute("loggedInUser", loggedInUser);
+            model.addAttribute("loggedInUser", loggedInUser);
 
-        return "home";
+            return "home";
+        } else {
+            model.addAttribute("message", "You don't have an account.");
+            return "signIn";
+        }
 
     }
 
     @PostMapping("/signOut")
-    public String signOut(HttpSession session) {
+    public ModelAndView signOut(HttpSession session) {
 
         session.removeAttribute("loggedInUserId");
 
-        return "home";
+        return new ModelAndView("home");
     }
 
 }
