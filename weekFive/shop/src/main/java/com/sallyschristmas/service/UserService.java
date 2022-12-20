@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.sallyschristmas.entity.Cart;
+import com.sallyschristmas.entity.CreditCard;
 import com.sallyschristmas.entity.Sapp;
 import com.sallyschristmas.repo.UserRepo;
 
@@ -42,6 +43,12 @@ public class UserService {
 
     public List<Sapp> findAllSapps() {
         return userRepo.findAll();
+    }
+
+    public Sapp addCreditCard(CreditCard creditCard, Sapp loggedInSapp) {
+
+        loggedInSapp.getDaBank().add(creditCard);
+        return save(loggedInSapp);
     }
     
 }

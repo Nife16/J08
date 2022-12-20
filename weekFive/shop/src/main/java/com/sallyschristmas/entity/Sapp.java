@@ -87,6 +87,14 @@ public class Sapp {
         return "Sapp [id=" + id + ", username=" + username + ", password=" + password + ", cart=" + cart + "]";
     }
 
+    public List<CreditCard> getDaBank() {
+        return daBank;
+    }
+
+    public void setDaBank(List<CreditCard> daBank) {
+        this.daBank = daBank;
+    }
+
     
     
 }

@@ -23,7 +23,18 @@
         </c:choose>
     </div>
 	<div class="flex-row main-content">
-        Are you sure?
+        THANKS FOR THE MONEY, ${loggedInUser.getUsername()}!!!!!!!!
+        <div class="flex-row center full-width">
+            <c:forEach var="product" items="${purchasedProducts}">
+                <div class="list-item">
+                    <!-- <div>${product.getName()}</div>
+                    <div>${product.getPrice()}</div>
+                    <div>${product.getDescription()}</div> -->
+                    <!-- <img src="${product.getImages()}" /> -->
+                </div>
+                <!-- <div>TOTAL PRICE: ${price}</div> -->
+            </c:forEach>
+        </div>
     </div>
 </body>
 

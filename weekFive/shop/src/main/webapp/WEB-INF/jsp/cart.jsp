@@ -24,7 +24,8 @@
             </c:otherwise>
         </c:choose>
     </div>
-	<div class="flex-row main-content">
+	<div class="flex-col center main-content">
+        <a class="buy-button" href="/addCreditCard">Add Credit Card</a>
         <div class="flex-row center full-width">
             <c:forEach var="product" items="${loggedInUser.getCart().getProducts()}">
                 <div class="list-item">
@@ -36,8 +37,23 @@
                 </div>
             </c:forEach>
         </div>
+        <div class="flex-row center full-width">
+            <c:forEach var="creditCard" items="${loggedInUser.getDaBank()}">
+                <div class="list-item">
+                    <div>Card Number: ${creditCard.getCardName()}</div>
+                    <div>Balance on Card: ${creditCard.getBalance()}</div>
+                    <img src="https://thumbor.forbes.com/thumbor/fit-in/600x300/https://www.forbes.com/advisor/wp-content/uploads/2021/08/centurion.png" />
+                    <form:form modelAttribute="loggedInUser" action="cart/${creditCard.getId()}" method="post">
+                        <form:button class="buy-button">Purchase with ME</form:button>
+                    </form:form>
+                </div>
+            </c:forEach>
+        </div>
         <div class="center">Total Price: ${loggedInUser.getCart().getTotalPrice()}</div>
-        <button class="buy-button"><a class="button-link" href="">Buy items</a></button>
+        <form:form modelAttribute="loggedInUser" action="cart" method="post">
+            <form:button class="buy-button">Buy items</form:button>
+        </form:form>
+
     </div>
 </body>
 

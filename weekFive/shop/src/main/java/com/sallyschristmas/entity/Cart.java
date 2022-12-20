@@ -60,7 +60,7 @@ public class Cart {
         this.products = products;
     }
 
-    public String getTotalPrice() {
+    public Double getTotalPrice() {
 
         Double sum = 0.00;
         for (Product product : this.products) {
@@ -68,7 +68,7 @@ public class Cart {
         }
 
         sum = (double) Math.round(sum*100.0)/100.0;
-        return Double.toString(sum);
+        return sum;
     }
 
     @Override

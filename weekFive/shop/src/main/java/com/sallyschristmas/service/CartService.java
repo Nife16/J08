@@ -45,6 +45,16 @@ public class CartService {
 
     }
 
+    public Sapp clearCart(Sapp sapp) {
+
+        sapp.getCart().getProducts().clear();
+
+        save(sapp.getCart());
+
+        return sapp;
+
+    }
+
     public void deleteCart(Cart cart) {
         cartRepo.delete(cart);
     }

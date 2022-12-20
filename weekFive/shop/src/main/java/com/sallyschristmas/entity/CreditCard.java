@@ -20,8 +20,13 @@ public class CreditCard {
 	private Integer id;
 
     // Column maps to the same name as the column name in the database, it is case sensitive
-    @Column(name = "card_name")
+    @Column(name = "card_name", unique = true)
 	private String cardName;
+
+    
+    // Column maps to the same name as the column name in the database, it is case sensitive
+    @Column(name = "security_code")
+	private String securityCode;
 
 
     // Column maps to the same name as the column name in the database, it is case sensitive
@@ -56,6 +61,16 @@ public class CreditCard {
 
     public void setBalance(Double balance) {
         this.balance = balance;
+    }
+
+
+    public String getSecurityCode() {
+        return securityCode;
+    }
+
+
+    public void setSecurityCode(String securityCode) {
+        this.securityCode = securityCode;
     }
 
     
