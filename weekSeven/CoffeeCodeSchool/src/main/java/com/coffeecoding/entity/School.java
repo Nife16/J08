@@ -19,7 +19,6 @@ public class School {
     @Column(name="school_name", unique = true)
     private String schoolName;
 
-    // All boys/girls etc
     @Column(name="type")
     private String type;
 
