@@ -1,10 +1,14 @@
 package com.coffeecoding.entity;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -22,7 +26,16 @@ public class School {
     @Column(name="type")
     private String type;
 
-    // STUDENTS, STAFF, CLASSES, ADDRESS
+    // STUDENTS, STAFF, CLASSES, CONTACT
+
+    @OneToMany
+    @JoinColumn(name="school_id", referencedColumnName = "id")
+    private List<Student> students;
+
+    @OneToMany
+    @JoinColumn(name="school_id", referencedColumnName = "id")
+    private List<Course> classes;
+    
 
     public School() {
     }
@@ -45,6 +58,18 @@ public class School {
 
     public void setType(String type) {
         this.type = type;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public List<Student> getStudents() {
+        return students;
+    }
+
+    public void setStudents(List<Student> students) {
+        this.students = students;
     }
 
     @Override
