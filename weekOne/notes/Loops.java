@@ -7,7 +7,7 @@ public class Loops {
         /* Loops
          * There are 3 main loops, while, do while and for
          * loops are like ifs but a bit more special
-         * they are parenthesis for their condition but they will run their block until the condition is false
+         * there are parenthesis for their condition but they will run their block until the condition is false
          * the code in the parenthesis still must be evaluated to a boolean
          */
 
@@ -40,7 +40,7 @@ public class Loops {
         int[] intArray = new int[10];
 
         //  counter    < arr.length or <= arr.length-1 so no out of bounds indexing
-        for (int i = 0; i < intArray.length; i++) {
+        for (int index = 0; index < intArray.length; index++) {
             // will run this code until i is out of bounds of the arrays indexes
         }
 
