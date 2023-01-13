@@ -11,5 +11,8 @@ public interface StudentRepo extends JpaRepository<Student, Integer> {
 
     @Query(value="select * from students where student_email = ?1 and password = ?2", nativeQuery = true)
     public Student getByStudentEmailAndPassword(String email, String password);
+
+    @Query(value="select * from students where student_email = ?1", nativeQuery = true)
+    public Student getByStudentEmail(String email);
     
 }

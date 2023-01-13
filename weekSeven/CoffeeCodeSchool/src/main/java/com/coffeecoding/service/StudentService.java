@@ -47,7 +47,11 @@ public class StudentService {
         return savedStudent;
     }
 
-    public Student getByStudentEmailAndPassword(String studentEmail, String password) {
+    public Student getByStudentEmailAndPassword(String studentEmail, String password) throws Exception {
+
+        if(studentRepo.getByStudentEmailAndPassword(studentEmail, password) == null) {
+            throw new Exception("ERROR!!! ERROR!!! ERROR!!! STUDENT NOT FOUND!!!!");
+        }
 
         return studentRepo.getByStudentEmailAndPassword(studentEmail, password);
 
@@ -56,6 +60,12 @@ public class StudentService {
     public Student findById(Integer studentId) {
 
         return studentRepo.findById(studentId).get();
+
+    }
+
+    public Student findByEmail(String studentEmail) {
+
+        return studentRepo.getByStudentEmail(studentEmail);
 
     }
 
