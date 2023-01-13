@@ -1,9 +1,11 @@
 import axios from 'axios'
 import React, { useState } from 'react'
+import { useNavigate } from 'react-router'
 import '../../css/reusable/sign-up-box.css'
 
 function SignInBox() {
 
+    const navigator = useNavigate()
     const [student, setStudent] = useState({
         studentEmail: "",
         password: ""
@@ -20,14 +22,14 @@ function SignInBox() {
 
     const submitHandler = () => {
 
-        
-
         axios.post("http://localhost:8080/signIn", student)
         .then((response) => {
             // Logically do what you gotta do
             console.log(response.data)
+            localStorage.setItem("studentEmail", response.data.studentEmail)
+            navigator('/')
         }).catch((e) => {
-            console.log(e)
+            console.log(e.response)
         })
 
     }
@@ -36,7 +38,7 @@ function SignInBox() {
         <div class="box">
             <div class="box-content flex-col margin-center">
                 <h1 class="box-header">Sign In</h1>
-                <form>
+                <div>
                     <div class="flex-col">
                         <div class="flex-row">
                             <div class="box-input">
@@ -49,7 +51,7 @@ function SignInBox() {
                         </div>
                         <button class="result-button" onClick={submitHandler}>Submit</button>
                     </div>
-                </form>
+                </div>
             </div>
         </div>
     )

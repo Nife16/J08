@@ -25,11 +25,11 @@ function SignUpBox() {
 
     const submitHandler = () => {
 
-        const number = 1;
+        const schoolId = 1;
 
         
 
-        axios.post(`http://localhost:8080/enroll/${number}`, student)
+        axios.post(`http://localhost:8080/enroll/${schoolId}`, student)
         .then((response) => {
             // Form tag was messing up the navigate, causing query params to show. so dont use form tags!
             navigate("/signIn")
