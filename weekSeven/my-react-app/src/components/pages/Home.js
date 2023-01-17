@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
+import Button from '../reusables/Button';
 import Header from '../reusables/Header';
 import ImageComponent from '../reusables/ImageComponent';
 import MainContent from '../reusables/MainContent';

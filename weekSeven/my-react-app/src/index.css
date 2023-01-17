@@ -94,5 +94,9 @@ html, body {
   flex-direction: column;
 }
 
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
 @import url('./App.css');
 

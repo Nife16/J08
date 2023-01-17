@@ -1,0 +1,26 @@
+
+.button-homepage {
+    color: crimson;
+    height: 100px;
+    width: 1000px;
+}
+
+.button-signUp {
+    color: green;
+    height: 200px;
+    width: 600px;
+}
+
+.result-button {
+    width: 100%;
+    background-color: purple;
+    color: white;
+    border-radius: 5px;
+    text-align: center;
+    margin: 25px 0px;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
+    font-size: 18px;
+    border: none;
+}

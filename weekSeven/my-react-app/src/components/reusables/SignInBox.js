@@ -2,6 +2,7 @@ import axios from 'axios'
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router'
 import '../../css/reusable/sign-up-box.css'
+import Button from './Button'
 
 function SignInBox() {
 
@@ -20,12 +21,15 @@ function SignInBox() {
         setStudent(tempStudent)
     }
 
-    const submitHandler = () => {
+    const submitHandler = (event) => {
 
         axios.post("http://localhost:8080/signIn", student)
         .then((response) => {
             // Logically do what you gotta do
-            console.log(response.data)
+            const user = response.data
+            if(user.isAdmin === true) {
+                navigator('/adminPage')
+            }
             localStorage.setItem("studentEmail", response.data.studentEmail)
             navigator('/')
         }).catch((e) => {
@@ -49,7 +53,7 @@ function SignInBox() {
                                 <input placeholder="Password" type="password" onChange={changeHandler} name="password" value={student.password} />
                             </div>
                         </div>
-                        <button class="result-button" onClick={submitHandler}>Submit</button>
+                        <Button className="result-button" onClick={submitHandler} text={"Sign In"} />
                     </div>
                 </div>
             </div>
