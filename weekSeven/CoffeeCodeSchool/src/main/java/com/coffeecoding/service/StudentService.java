@@ -1,5 +1,7 @@
 package com.coffeecoding.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -16,6 +18,10 @@ public class StudentService {
 
     @Autowired
     SchoolService schoolService;
+
+    public List<Student> getAll() {
+        return studentRepo.findAll(); 
+    }
 
     public Student updateStudentInfo(Student student) throws Exception {
         

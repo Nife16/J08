@@ -1,5 +1,7 @@
 package com.coffeecoding.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -131,5 +133,25 @@ public class StudentController {
 
     }
 
+    @RequestMapping(
+        value="/viewAllStudents",
+        produces = MediaType.APPLICATION_JSON_VALUE,
+        method = RequestMethod.GET
+    )
+    public ResponseEntity<Object> viewAll() {
+
+        try {
+            List<Student> allStudents = studentService.getAll();
+       
+            return new ResponseEntity<>(allStudents, HttpStatus.OK);
+        } catch(Exception e) {
+            System.out.println(e.getMessage());
+            return new ResponseEntity<>(e.getMessage(), HttpStatus.BAD_REQUEST);
+        } catch(Error e) {
+            System.out.println(e.getMessage());
+            return new ResponseEntity<>(e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+
+    }
 
 }
