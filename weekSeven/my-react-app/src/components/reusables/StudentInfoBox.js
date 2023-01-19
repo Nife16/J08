@@ -28,7 +28,7 @@ function StudentInfoBox(props) {
     }
 
     const onClicky = (event) => {
-        
+
         axios.get(`http://localhost:8080/getStudentById/${event.target.id}`)
         .then((response) => {
             setActiveStudent(response.data)

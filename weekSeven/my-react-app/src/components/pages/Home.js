@@ -9,7 +9,8 @@ function Home() {
 
   // useState variable
 
-  const [user, setUser] = useState({})
+  const [allUsers, setAllUsers] = useState([])
+  const [allSchools, setAllASchools] = useState([])
   const [filters, setFilters] = useState({
     year: null,
     make: null,
@@ -17,23 +18,38 @@ function Home() {
   })
   
   useEffect(function() {
-    const email = localStorage.getItem("studentEmail")
+    // const email = localStorage.getItem("studentEmail")
 
-    axios.get(`http://localhost:8080/getStudentByEmail/${email}`)
+    axios.get(`http://localhost:8080/viewAllStudents`)
     .then(function(response) {
-        setUser(response.data)
+        setAllUsers(response.data)
     })
     .catch((e) => {
       console.log(e)
     }) 
 
   }, [])
+  
+  useEffect(() => {
+    axios.get(`http://localhost:8080/getAllSchools`)
+    .then(function(response) {
+        setAllASchools(response.data)
+    })
+    .catch((e) => {
+      console.log(e)
+    }) 
+  }, [])
 
   return (
     <div className="App">
+      {allSchools.map((school) => {
+        return <div>{school.schoolName}</div>
+      })}
+      {allUsers.map((user) => {
+        return <div>{user.firstName}</div>
+      })}
       <Header />
       <MainContent>
-        {user.isLoggedIn ? "true" : "false"}
         <ImageComponent 
           imageUrl={"https://pyxis.nymag.com/v1/imgs/0f9/f96/029acbf4c6d8c67e138e1eb06a277204bf-05-patrick.rsocial.w1200.jpg"}
          /* height={300}
