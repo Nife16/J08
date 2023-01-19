@@ -20,10 +20,11 @@ function ViewStundents() {
                 setTimeout(() => {
                     setAllStudents(response.data)
                     setIsLoading(false)
-                }, 3000)
+                }, 1000)
             })
             .catch((e) => {
                 console.log(e)
+                setIsLoading(false)
             })
     }, [])
 
@@ -58,5 +59,4 @@ function ViewStundents() {
     )
 }
 
-{/* */ }
 export default ViewStundents

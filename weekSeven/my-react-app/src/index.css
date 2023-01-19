@@ -98,5 +98,8 @@ html, body {
   flex-wrap: wrap;
 }
 
+
+@import url('./css/reusable/modal.css');
+
 @import url('./App.css');
 

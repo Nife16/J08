@@ -16,6 +16,7 @@ function SignUpBox() {
 
 
     const changeHandler = (event) => {
+        console.log(event.target.value)
         const name = event.target.name
         const value = event.target.value
         const tempStudent = { ...student }
@@ -39,6 +40,8 @@ function SignUpBox() {
 
     }
 
+
+
     return (
         <div class="box">
             <div class="box-content flex-col margin-center">
@@ -56,7 +59,7 @@ function SignUpBox() {
                         </div>
                         <div className='flex-row'>
                             <div class="box-input">
-                                <input placeholder="Age" type="number" onChange={changeHandler} name="age" value={student.age} />
+                                <input placeholder="Age" type="date" onChange={changeHandler} name="age" value={student.age} />
                             </div>
                             <div class="arrow">&</div>
                             <div class="box-input">

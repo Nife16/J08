@@ -33,7 +33,7 @@ function Home() {
     <div className="App">
       <Header />
       <MainContent>
-        {user.studentEmail}
+        {user.isLoggedIn ? "true" : "false"}
         <ImageComponent 
           imageUrl={"https://pyxis.nymag.com/v1/imgs/0f9/f96/029acbf4c6d8c67e138e1eb06a277204bf-05-patrick.rsocial.w1200.jpg"}
          /* height={300}
