@@ -7,11 +7,10 @@ import SignUpBox from '../reusables/SignUpBox'
 
 function SignUp() {
   return (
-    <div className='App'>
-        <Header />
-        <MainContent>
-            <SignUpBox />
-        </MainContent>
+    <div className='flex-col'>
+
+      <SignUpBox />
+
     </div>
   )
 }

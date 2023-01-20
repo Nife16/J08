@@ -5,7 +5,7 @@ import Header from '../reusables/Header';
 import ImageComponent from '../reusables/ImageComponent';
 import MainContent from '../reusables/MainContent';
 
-function Home() {
+function Home(props) {
 
   // useState variable
 
@@ -18,7 +18,7 @@ function Home() {
   })
   
   useEffect(function() {
-    // const email = localStorage.getItem("studentEmail")
+
 
     axios.get(`http://localhost:8080/viewAllStudents`)
     .then(function(response) {
@@ -41,22 +41,20 @@ function Home() {
   }, [])
 
   return (
-    <div className="App">
+    <div className='flex-col'>
       {allSchools.map((school) => {
         return <div>{school.schoolName}</div>
       })}
       {allUsers.map((user) => {
         return <div>{user.firstName}</div>
       })}
-      <Header />
-      <MainContent>
+      
         <ImageComponent 
           imageUrl={"https://pyxis.nymag.com/v1/imgs/0f9/f96/029acbf4c6d8c67e138e1eb06a277204bf-05-patrick.rsocial.w1200.jpg"}
          /* height={300}
           width={500} */
           imageClass={"image"}
         />
-      </MainContent>
     </div>
   );
 }

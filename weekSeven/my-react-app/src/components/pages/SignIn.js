@@ -5,13 +5,12 @@ import Header from '../reusables/Header'
 import MainContent from '../reusables/MainContent'
 import SignInBox from '../reusables/SignInBox'
 
-function SignIn() {
+function SignIn(props) {
   return (
-    <div className='App'>
-        <Header />
-        <MainContent>
-            <SignInBox />
-        </MainContent>
+    <div className='flex-col'>
+
+      <SignInBox user={props.user} setUser={props.setUser} />
+
     </div>
   )
 }

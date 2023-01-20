@@ -48,13 +48,13 @@ function ViewStundents() {
     }
 
     return (
-        <div className="App">
-            <Header />
-            <MainContent>
+        <div className='flex-col'>
+            <div className="out-of-the-box">
                 <div className="flex-row flex-wrap">
                     {renderContent()}
                 </div>
-            </MainContent>
+            </div>
+            <div>Hi mom</div>
         </div>
     )
 }

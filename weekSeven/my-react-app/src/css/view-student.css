@@ -4,3 +4,20 @@
     height: 200px;
     width: 300px;
 }
+
+/* For Scrollable Box's */
+.out-of-the-box {
+    /* Give height for the div so it doesn't extend */
+    height: 500px;
+    /* Hide the overflow so it has to be scrolled to be seen */
+    overflow-y: hidden;
+    /* Enable Scrolling in the y-axis */
+    overflow-y: scroll;
+    /* Hide scrollbar for IE, Edge and Firefox */
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+.out-of-the-box::-webkit-scrollbar {
+    display: none;
+}

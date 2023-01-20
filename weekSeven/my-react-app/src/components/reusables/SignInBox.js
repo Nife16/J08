@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router'
 import '../../css/reusable/sign-up-box.css'
 import Button from './Button'
 
-function SignInBox() {
+function SignInBox(props) {
 
     const navigator = useNavigate()
     const [student, setStudent] = useState({
@@ -31,6 +31,7 @@ function SignInBox() {
                 navigator('/adminPage')
             }
             localStorage.setItem("studentEmail", response.data.studentEmail)
+            props.setUser(response.data)
             navigator('/')
         }).catch((e) => {
             console.log(e.response)
