@@ -21,7 +21,7 @@ function SignInBox(props) {
         setStudent(tempStudent)
     }
 
-    const submitHandler = (event) => {
+    const submitHandler = () => {
 
         axios.post("http://localhost:8080/signIn", student)
         .then((response) => {

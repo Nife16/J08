@@ -31,6 +31,8 @@ function App() {
           console.log(e)
           setIsLoading(false)
         })
+    } else {
+      setIsLoading(false)
     }
   }, [])
 

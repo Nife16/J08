@@ -3,6 +3,11 @@ import LoadingSpinner from "./LoadingSpinner"
 
 const Header = (props) => {
 
+    const signOut = () => {
+        localStorage.removeItem("studentEmail")
+        props.setUser(null)
+    }
+
 
     const showTheRightButtons = () => {
 
@@ -18,7 +23,7 @@ const Header = (props) => {
         } else {
             return (
                 <div>
-                    <button class="header-links" href="/">Sign Out</button>
+                    <button class="header-links" onClick={signOut}>Sign Out</button>
                     <a class="header-links" href="/">Home</a>
                     <a class="header-links" href="/viewAllStudents">View Students</a>
                 </div>
